@@ -1,0 +1,25 @@
+{
+  "name": "jamili-carpets-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "compatibility_date": "2026-09-04",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jamili-carpets-db",
+      "database_id": "YOUR_D1_DATABASE_ID"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "IMAGES",
+      "bucket_name": "jamili-carpets-images"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "ADMIN_SESSIONS",
+      "id": "YOUR_KV_NAMESPACE_ID"
+    }
+  ]
+}
