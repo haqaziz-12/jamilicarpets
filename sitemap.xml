@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jamilicarpets.pages.dev/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/collections.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/collection.html?c=classic</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/collection.html?c=contemporary</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/collection.html?c=mamluk</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/collection.html?c=kilim</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/collection.html?c=geometric</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/custom-order.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/about.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/artisans.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/process.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/wholesale.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/blog.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/faq.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://jamilicarpets.pages.dev/contact.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+</urlset>
