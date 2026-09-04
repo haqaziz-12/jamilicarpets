@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Jamili Carpets Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+<aside class="admin-sidebar" id="sidebar">
+<div class="sidebar-logo">
+<h2>JAMILI<span>CARPETS</span></h2>
+<p>Admin Panel</p>
+</div>
+<nav class="sidebar-nav">
+<a href="/admin/dashboard.html"><span>📊</span> Dashboard</a>
+<a href="/admin/products.html" class="active"><span>🧶</span> Products</a>
+<a href="/admin/inquiries.html"><span>📋</span> Inquiries</a>
+<a href="/admin/messages.html"><span>✉️</span> Messages</a>
+<a href="/admin/settings.html"><span>⚙️</span> Settings</a>
+<a href="/" target="_blank"><span>🌐</span> View Site</a>
+<a href="#" onclick="logout()"><span>🚪</span> Logout</a>
+</nav>
+</aside>
+
+<main class="admin-main">
+<header class="admin-header">
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+<h1>Products</h1>
+<button class="btn-add" onclick="openProductModal()">+ Add Product</button>
+</header>
+
+<div class="admin-content">
+<div class="filter-bar">
+<select id="filterCollection" onchange="renderProducts()">
+<option value="all">All Collections</option>
+<option value="classic">Classic</option>
+<option value="contemporary">Afghan Contemporary</option>
+<option value="mamluk">Mamluk</option>
+<option value="kilim">Kilim</option>
+<option value="geometric">Geometric</option>
+</select>
+<input type="text" id="searchProducts" placeholder="Search products..." oninput="renderProducts()">
+</div>
+
+<div class="admin-table-wrap">
+<table class="admin-table">
+<thead>
+<tr>
+<th>Image</th>
+<th>Name</th>
+<th>Collection</th>
+<th>Size</th>
+<th>Quality</th>
+<th>Pile</th>
+<th>Featured</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="productsTableBody">
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+
+<!-- Product Modal -->
+<div class="modal-overlay" id="productModal">
+<div class="modal-large">
+<button class="modal-close" onclick="closeProductModal()">✕</button>
+<h2 id="productModalTitle">Add Product</h2>
+<form id="productForm" onsubmit="saveProduct(event)">
+<input type="hidden" id="editId" value="">
+<div class="form-row">
+<div class="form-group">
+<label>Product Name *</label>
+<input type="text" id="pName" required>
+</div>
+<div class="form-group">
+<label>Collection *</label>
+<select id="pCollection" required>
+<option value="classic">Classic</option>
+<option value="contemporary">Afghan Contemporary</option>
+<option value="mamluk">Mamluk</option>
+<option value="kilim">Kilim</option>
+<option value="geometric">Geometric</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Size *</label>
+<input type="text" id="pSize" placeholder="6' x 9' (183 x 274 cm)" required>
+</div>
+<div class="form-group">
+<label>Quality *</label>
+<select id="pQuality" required>
+<option value="Standard">Standard</option>
+<option value="Fine">Fine</option>
+<option value="Super Fine">Super Fine</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Origin *</label>
+<input type="text" id="pOrigin" value="Kabul, Afghanistan" required>
+</div>
+<div class="form-group">
+<label>Pile Height *</label>
+<select id="pPile" required>
+<option value="1mm">1mm</option>
+<option value="2mm">2mm</option>
+<option value="3mm">3mm</option>
+<option value="4mm">4mm</option>
+<option value="5mm">5mm</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>Description *</label>
+<textarea id="pDescription" rows="4" required></textarea>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Colors (comma-separated)</label>
+<input type="text" id="pColors" placeholder="red, gold, blue">
+</div>
+<div class="form-group">
+<label>Featured</label>
+<select id="pFeatured">
+<option value="false">No</option>
+<option value="true">Yes</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>Front Image URL</label>
+<input type="text" id="pImgFront" placeholder="/images/products/product-front.webp">
+</div>
+<div class="form-group">
+<label>Back Image URL</label>
+<input type="text" id="pImgBack" placeholder="/images/products/product-back.webp">
+</div>
+<div class="form-group">
+<label>Detail Image URL</label>
+<input type="text" id="pImgDetail" placeholder="/images/products/product-detail.webp">
+</div>
+<div class="form-actions">
+<button type="button" class="btn-cancel" onclick="closeProductModal()">Cancel</button>
+<button type="submit" class="btn-save">Save Product</button>
+</div>
+</form>
+</div>
+</div>
+
+<script src="/admin/admin.js"></script>
+<script src="/products-data.js"></script>
+<script>
+checkAuth();
+renderProducts();
+</script>
+</body>
+</html>
