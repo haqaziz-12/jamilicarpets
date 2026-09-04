@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Jamili Carpets Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+<aside class="admin-sidebar" id="sidebar">
+<div class="sidebar-logo">
+<h2>JAMILI<span>CARPETS</span></h2>
+<p>Admin Panel</p>
+</div>
+<nav class="sidebar-nav">
+<a href="/admin/dashboard.html" class="active"><span>📊</span> Dashboard</a>
+<a href="/admin/products.html"><span>🧶</span> Products</a>
+<a href="/admin/inquiries.html"><span>📋</span> Inquiries</a>
+<a href="/admin/messages.html"><span>✉️</span> Messages</a>
+<a href="/admin/settings.html"><span>⚙️</span> Settings</a>
+<a href="/" target="_blank"><span>🌐</span> View Site</a>
+<a href="#" onclick="logout()"><span>🚪</span> Logout</a>
+</nav>
+</aside>
+
+<main class="admin-main">
+<header class="admin-header">
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+<h1>Dashboard</h1>
+<div class="admin-user">
+<span id="adminUser">admin</span>
+</div>
+</header>
+
+<div class="admin-content">
+<div class="stats-cards">
+<div class="stat-card">
+<div class="stat-icon">🧶</div>
+<div class="stat-info">
+<h3 id="totalProducts">—</h3>
+<p>Total Products</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">📋</div>
+<div class="stat-info">
+<h3 id="totalInquiries">—</h3>
+<p>Quote Inquiries</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">✉️</div>
+<div class="stat-info">
+<h3 id="totalMessages">—</h3>
+<p>Messages</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🎨</div>
+<div class="stat-info">
+<h3 id="totalCollections">5</h3>
+<p>Collections</p>
+</div>
+</div>
+</div>
+
+<div class="dashboard-section">
+<h2>Recent Inquiries</h2>
+<div class="admin-table-wrap">
+<table class="admin-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Product</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody id="recentInquiries">
+<tr><td colspan="5" class="loading">Loading...</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="dashboard-section">
+<h2>Recent Messages</h2>
+<div class="admin-table-wrap">
+<table class="admin-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Subject</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody id="recentMessages">
+<tr><td colspan="5" class="loading">Loading...</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="dashboard-section">
+<h2>Products by Collection</h2>
+<div class="collection-stats" id="collectionStats">
+<div class="collection-stat-item"><span>Classic</span><strong id="countClassic">—</strong></div>
+<div class="collection-stat-item"><span>Contemporary</span><strong id="countContemporary">—</strong></div>
+<div class="collection-stat-item"><span>Mamluk</span><strong id="countMamluk">—</strong></div>
+<div class="collection-stat-item"><span>Kilim</span><strong id="countKilim">—</strong></div>
+<div class="collection-stat-item"><span>Geometric</span><strong id="countGeometric">—</strong></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="/admin/admin.js"></script>
+<script src="/products-data.js"></script>
+<script>
+checkAuth();
+loadDashboard();
+</script>
+</body>
+</html>
