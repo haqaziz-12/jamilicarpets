@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages — Jamili Carpets Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<div class="admin-layout">
+<aside class="admin-sidebar" id="sidebar">
+<div class="sidebar-logo">
+<h2>JAMILI<span>CARPETS</span></h2>
+<p>Admin Panel</p>
+</div>
+<nav class="sidebar-nav">
+<a href="/admin/dashboard.html"><span>📊</span> Dashboard</a>
+<a href="/admin/products.html"><span>🧶</span> Products</a>
+<a href="/admin/inquiries.html"><span>📋</span> Inquiries</a>
+<a href="/admin/messages.html" class="active"><span>✉️</span> Messages</a>
+<a href="/admin/settings.html"><span>⚙️</span> Settings</a>
+<a href="/" target="_blank"><span>🌐</span> View Site</a>
+<a href="#" onclick="logout()"><span>🚪</span> Logout</a>
+</nav>
+</aside>
+
+<main class="admin-main">
+<header class="admin-header">
+<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+<h1>Messages</h1>
+</header>
+
+<div class="admin-content">
+<div class="filter-bar">
+<select id="filterStatus" onchange="renderMessages()">
+<option value="all">All Status</option>
+<option value="new">New</option>
+<option value="read">Read</option>
+<option value="replied">Replied</option>
+</select>
+<input type="text" id="searchMessages" placeholder="Search messages..." oninput="renderMessages()">
+</div>
+
+<div class="admin-table-wrap">
+<table class="admin-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Subject</th>
+<th>Date</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="messagesTableBody">
+<tr><td colspan="6" class="loading">Loading...</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+
+<div class="modal-overlay" id="messageModal">
+<div class="modal-medium">
+<button class="modal-close" onclick="closeModal('messageModal')">✕</button>
+<h2>Message Details</h2>
+<div id="messageDetail" class="inquiry-detail"></div>
+</div>
+</div>
+
+<script src="/admin/admin.js"></script>
+<script>
+checkAuth();
+renderMessages();
+</script>
+</body>
+</html>
