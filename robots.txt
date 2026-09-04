@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jamilicarpets.pages.dev/sitemap.xml
